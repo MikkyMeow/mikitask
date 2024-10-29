@@ -1,8 +1,9 @@
-import { CloseOutlined, MenuOutlined } from "@mui/icons-material";
-import { Drawer, IconButton, List, ListItemButton } from "@mui/material";
+import { MenuOutlined } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
+import { Nav } from "components/widgets/Nav";
 import i18n, { t } from "i18next";
-import { useState } from "react";
 import { initReactI18next } from "react-i18next";
+import { appStore } from "store/app.store";
 
 i18n.use(initReactI18next).init({
   lng: "en",
@@ -35,26 +36,14 @@ i18n.use(initReactI18next).init({
 });
 
 export const App = () => {
-  const [showMenu, setShowMenu] = useState(false);
+  const { setShowMenu } = appStore();
 
   return (
     <div>
-      <IconButton onClick={() => setShowMenu(!showMenu)}>
+      <IconButton onClick={() => setShowMenu(true)}>
         <MenuOutlined />
       </IconButton>
-      <Drawer open={showMenu} onClose={() => setShowMenu(false)}>
-        <IconButton onClick={() => setShowMenu(false)}>
-          <CloseOutlined />
-        </IconButton>
-        <List>
-          <ListItemButton>{t("today")}</ListItemButton>
-          <ListItemButton>{t("notes")}</ListItemButton>
-          <ListItemButton>{t("todo")}</ListItemButton>
-          <ListItemButton>{t("projects")}</ListItemButton>
-          <ListItemButton>{t("habits")}</ListItemButton>
-          <ListItemButton>{t("financialManager")}</ListItemButton>
-        </List>
-      </Drawer>
+      <Nav />
     </div>
   );
 };
