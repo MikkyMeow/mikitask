@@ -1,9 +1,7 @@
-import { MenuOutlined } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
-import { Nav } from "components/widgets/Nav";
-import i18n, { t } from "i18next";
+import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { appStore } from "store/app.store";
+import { RouterProvider } from "react-router-dom";
+import { router } from "router";
 
 i18n.use(initReactI18next).init({
   lng: "en",
@@ -36,14 +34,9 @@ i18n.use(initReactI18next).init({
 });
 
 export const App = () => {
-  const { setShowMenu } = appStore();
-
   return (
     <div>
-      <IconButton onClick={() => setShowMenu(true)}>
-        <MenuOutlined />
-      </IconButton>
-      <Nav />
+      <RouterProvider router={router} />
     </div>
   );
 };
