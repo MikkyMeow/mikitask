@@ -10,14 +10,22 @@ import {
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { appStore } from "store/app.store";
+import styles from "./Nav.module.css";
 
 export const Nav = () => {
   const { t } = useTranslation();
   const { showMenu, setShowMenu } = appStore();
 
   return (
-    <Drawer open={showMenu} onClose={() => setShowMenu(false)}>
-      <IconButton onClick={() => setShowMenu(false)}>
+    <Drawer
+      classes={{ paper: styles.root }}
+      open={showMenu}
+      onClose={() => setShowMenu(false)}
+    >
+      <IconButton
+        className={styles.closeButton}
+        onClick={() => setShowMenu(false)}
+      >
         <CloseOutlined />
       </IconButton>
       <List>
