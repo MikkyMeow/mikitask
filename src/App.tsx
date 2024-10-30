@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { RouterProvider } from "react-router-dom";
 import { router } from "router";
+import { StyledEngineProvider } from "@mui/material";
 import "./styles/index.css";
 
 i18n.use(initReactI18next).init({
@@ -35,5 +36,9 @@ i18n.use(initReactI18next).init({
 });
 
 export const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <StyledEngineProvider injectFirst>
+      <RouterProvider router={router} />
+    </StyledEngineProvider>
+  );
 };
