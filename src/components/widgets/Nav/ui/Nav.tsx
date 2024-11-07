@@ -30,6 +30,7 @@ export const Nav = () => {
       </IconButton>
       <List>
         <ListItemButton
+          disabled
           component={Link}
           to="/"
           onClick={() => setShowMenu(false)}
@@ -37,6 +38,7 @@ export const Nav = () => {
           <ListItemText primary={t("today")} />
         </ListItemButton>
         <ListItemButton
+          disabled
           component={Link}
           to="/notes"
           onClick={() => setShowMenu(false)}
@@ -51,6 +53,7 @@ export const Nav = () => {
           <ListItemText primary={t("todo")} />
         </ListItemButton>
         <ListItemButton
+          disabled
           component={Link}
           to="/projects"
           onClick={() => setShowMenu(false)}
@@ -58,6 +61,7 @@ export const Nav = () => {
           <ListItemText primary={t("projects")} />
         </ListItemButton>
         <ListItemButton
+          disabled
           component={Link}
           to="/habits"
           onClick={() => setShowMenu(false)}
