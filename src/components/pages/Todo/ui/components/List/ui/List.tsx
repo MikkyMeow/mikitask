@@ -12,12 +12,13 @@ import { useNavigate } from "react-router-dom";
 export const List = () => {
   const navigate = useNavigate();
   const { todos, removeTodo, toggleTodo } = todoStore();
+
   return (
     <MuiList>
       {todos.map((todo) => (
         <ListItemButton disableGutters key={todo.id}>
           <Checkbox
-            value={todo.completed}
+            checked={todo.completed}
             onChange={() => toggleTodo(todo.id)}
           />
           <ListItemText
