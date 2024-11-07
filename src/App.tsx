@@ -15,7 +15,7 @@ i18n.use(initReactI18next).init({
         todo: "Todo",
         projects: "Projects",
         habits: "Habits",
-        financialManager: "Financial Manager",
+        finance: "Finance",
       },
     },
     ru: {
@@ -25,7 +25,7 @@ i18n.use(initReactI18next).init({
         todo: "Список дел",
         projects: "Проекты",
         habits: "Привычки",
-        financialManager: "Финансовый менеджер",
+        finance: "Финансы",
       },
     },
   },

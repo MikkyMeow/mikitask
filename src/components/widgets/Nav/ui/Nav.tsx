@@ -1,4 +1,4 @@
-import { CloseOutlined } from "@mui/icons-material";
+import { CloseOutlined, SaveOutlined } from "@mui/icons-material";
 import {
   Drawer,
   IconButton,
@@ -69,7 +69,7 @@ export const Nav = () => {
           to="/finance"
           onClick={() => setShowMenu(false)}
         >
-          <ListItemText primary={t("financialManager")} />
+          <ListItemText primary={t("finance")} />
         </ListItemButton>
       </List>
     </Drawer>

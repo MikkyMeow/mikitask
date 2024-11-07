@@ -15,15 +15,16 @@ export const List = () => {
   return (
     <MuiList>
       {todos.map((todo) => (
-        <ListItemButton
-          key={todo.id}
-          onClick={() => navigate(`/todo/${todo.id}`)}
-        >
+        <ListItemButton disableGutters key={todo.id}>
           <Checkbox
             value={todo.completed}
             onChange={() => toggleTodo(todo.id)}
           />
-          <ListItemText primary={todo.title} secondary={todo.description} />
+          <ListItemText
+            onClick={() => navigate(`/todo/${todo.id}`)}
+            primary={todo.title}
+            secondary={todo.description}
+          />
           <IconButton onClick={() => removeTodo(todo.id)}>
             <DeleteOutlined />
           </IconButton>

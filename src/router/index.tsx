@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
       { path: "/todo/:id", element: <TodoItem /> },
       { path: "/projects", element: <h1>Projects</h1> },
       { path: "/habits", element: <h1>Habits</h1> },
-      { path: "/finance", element: <h1>Financial manager</h1> },
+      { path: "/finance", element: <h1>Finance</h1> },
     ],
   },
 ]);
